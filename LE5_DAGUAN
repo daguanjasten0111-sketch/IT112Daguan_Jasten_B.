@@ -6,19 +6,15 @@ int main()
     int sum = 0;
 
     printf("Enter positive numbers to ADD (zero or negative number to STOP)\n\n");
+    printf("Enter a number: ");
+    scanf("%d", &number);
 
-    do
-    {
+    while (number > 0){
+        sum += number;
+        
         printf("Enter a number: ");
         scanf("%d", &number);
-
-        if (number > 0)
-        {
-            sum = sum + number;
-        }
-
-    } while (number > 0);
-
+    }
     printf("Total sum is: %d\n", sum);
 
     return 0;
