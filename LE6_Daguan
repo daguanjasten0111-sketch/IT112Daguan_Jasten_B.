@@ -1,0 +1,92 @@
+#include <stdio.h>
+
+int addition(int a, int b);
+int subtraction(int a, int b);
+int multiplication(int a, int b);
+float division(int a, int b);
+
+int main()
+{
+    int num1, num2, choice;
+
+    do
+    {
+        printf("\nMultiple Functions to Perform Arithmetic Operations\n\n");
+
+        printf("Enter first number: ");
+        scanf("%d", &num1);
+
+        printf("Enter second number: ");
+        scanf("%d", &num2);
+
+        printf("\nChoose Operation:\n");
+        printf("[1] Addition\n");
+        printf("[2] Subtraction\n");
+        printf("[3] Multiplication\n");
+        printf("[4] Division\n");
+        printf("[5] Exit Program\n");
+
+        printf("\nEnter choice [1-5]: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+            case 1:
+                printf("\n%d + %d = %d\n",
+                       num1, num2, addition(num1, num2));
+                break;
+
+            case 2:
+                printf("\n%d - %d = %d\n",
+                       num1, num2, subtraction(num1, num2));
+                break;
+
+            case 3:
+                printf("\n%d * %d = %d\n",
+                       num1, num2, multiplication(num1, num2));
+                break;
+
+            case 4:
+                if (num2 != 0)
+                {
+                    printf("\n%d / %d = %.2f\n",
+                           num1, num2, division(num1, num2));
+                }
+                else
+                {
+                    printf("\nCannot divide by zero.\n");
+                }
+                break;
+
+            case 5:
+                printf("\nExiting program...\n");
+                break;
+
+            default:
+                printf("\nInvalid choice. Please choose 1-5.\n");
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
+
+int addition(int a, int b)
+{
+    return a + b;
+}
+
+int subtraction(int a, int b)
+{
+    return a - b;
+}
+
+int multiplication(int a, int b)
+{
+    return a * b;
+}
+
+float division(int a, int b)
+{
+    return (float)a / b;
+}
